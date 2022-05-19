@@ -1,0 +1,33 @@
+<!DOCTYPE>
+ <html>
+     <head>
+        <title>CuberByntaru</title>
+         <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+         <link rel="stylesheet" type="text/css" href="css/style.css">
+     </head>
+  <body>
+      <div class = "container">
+          <a href="index2.html">
+              <span>Сайт</span>
+          </a>
+          <a href="index1.html">
+            <span>Другое</span>
+        </a>
+      </div>
+      <div class="preloader">
+        <div class="preloader__row">
+          <div class="preloader__item"></div>
+          <div class="preloader__item"></div>
+        </div>
+      </div>
+      <script>
+        window.onload = function () {
+          document.body.classList.add('loaded_hiding');
+          window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+          }, 500);
+        }
+      </script>
+      </body>
+      </html>

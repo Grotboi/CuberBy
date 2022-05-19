@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family==Poppins:100,200,300,400,500,600,700,800,900');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body 
+{
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: #0e1538;
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+}
+.container a
+{
+    position: relative;
+    width: 160px;
+    height: 60px;
+    display: inline-block;
+    background: #fff;
+    margin: 20px;
+}
+.container a:before,
+.container a::after
+{
+    content: '';
+    position:absolute;
+    inset: 0;
+    background: #f00;
+    transition: 0.5s;
+}
+.container a:nth-child(1):before,
+.container a:nth-child(1):after
+{
+background: linear-gradient(45deg,#00ccff,#0e1538,#0e1538,#d400d4);
+}
+.container a:nth-child(2):before,
+.container a:nth-child(2):after
+{
+background: linear-gradient(45deg,#ff0180,#0e1538,#0e1538,#0cff04);
+}
+.container a:hover:before
+{
+    inset: -3px;
+}
+.container a:hover::after
+{
+    inset: -3px;
+    filter: blur(10px);
+}
+.container a span
+{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: inline-block;
+background: #0e1538;
+z-index: 10;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1.2em;
+text-transform: uppercase;
+letter-spacing: 2px;
+color: #fff;
+border: 1px solid #040a29;
+overflow: hidden;
+}
+.container a span::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.075);
+    transform: skew(25deg);
+}
+
+
+
+.preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #e0e0e0;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+  }
+  
+  .preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+  
+  .preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #337ab7;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+  }
+  
+  .preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+  }
+  
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes preloader-bounce {
+  
+    0%,
+    100% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  .loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+  }
+  
+  .loaded .preloader {
+    display: none;
+  }

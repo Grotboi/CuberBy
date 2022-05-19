@@ -1,0 +1,87 @@
+<!DOCTYPE>
+ <html>
+     <head>
+        <title>CuberByntaru</title>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="stylesheet" type="text/css" href="css/style4.css">
+     </head>
+  <body>
+
+    <div class = "navigation">
+        <ul>
+            <li class = "list active">
+                <a href = "index2.html">
+                    <span class = "icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class = "text">Home</span>
+                </a>
+            </li>
+            <li class = "list">
+                <a href = "index7.html">
+                    <span class = "icon"><ion-icon name="send-outline"></ion-icon></span>
+                    <span class = "text">Life</span>
+                </a>
+            </li>
+            <li class = "list">
+                <a href = "index5.html">
+                    <span class = "icon"><ion-icon name="play-outline"></ion-icon></span>
+                    <span class = "text">Play</span>
+                </a>
+            </li>
+            <li class = "list">
+                <a href = "index4.html">
+                    <span class = "icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>
+                    <span class = "text">Revie</span>
+                </a>
+            </li>
+            <li class = "list">
+                <a href = "index6.html">
+                    <span class = "icon"><ion-icon name="cube-outline"></ion-icon></span>
+                    <span class = "text">Cude</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+    
+    
+    
+    <script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script> 
+    <script  nomodule   src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script> 
+    
+    <script>
+        let list = document.querySelectorAll('.list');
+        function setActiveClass(){
+            list.forEach((item) =>
+            item.classList.remove('active')); 
+            this.classList.add('active');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover', setActiveClass))
+      
+    </script>
+
+<div class = "conteiner">
+    <div class = "box">
+        <img src = "img/f77.png">
+    </div>
+    <div class = "box">
+        <img src= "img/wonder-day-png-cyberpunk-2077-6.png">
+    </div>
+</div>
+<div class="preloader">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
+    </div>
+  </div>
+  <script>
+    window.onload = function () {
+      document.body.classList.add('loaded_hiding');
+      window.setTimeout(function () {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+      }, 500);
+    }
+  </script>
+  </body>
+ </html>

@@ -1,0 +1,241 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background-image: url(../img/thumb.jpg);
+}
+
+
+.navigation
+{
+    position: absolute;
+    width: 350px;
+    height: 700px
+}
+.navigation ul
+{
+    display: flex;
+}
+.navigation ul li
+{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul li a
+{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+color: #fff;
+text-align:center;
+}
+.navigation ul li a .icon
+{
+    position:relative;
+    line-height: 75px;
+    transition: 0.5s;
+    font-size: 30px;
+}
+.navigation ul li.active a .icon
+{
+font-size: 20px;
+transform: translateY(-6px);
+}
+.navigation ul li a .text
+{
+    position: absolute;
+    font-size: 12px;
+    color: #fff;
+    bottom: 20px;
+    font-weight: 400;
+    transition: 0.25s;
+    text-transform: uppercase;
+    transform: scale(0);
+}
+.navigation ul li.active a .text
+{
+    transform: scale(1);
+}
+.indicator
+{
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: 30px;
+    background: rgb(255, 5, 5);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.navigation ul li:nth-child(1).active ~ .indicator
+{
+    background: #f53b57;
+    box-shadow: 0 15px 25px #f53b57;
+    transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator
+{
+    background: #ffee02;
+    box-shadow: 0 15px 25px #fffb00;
+    transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator
+{
+    background: #00edf5;
+    box-shadow: 0 15px 25px #00edf5;
+    transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator
+{
+    background: #001aff;
+    box-shadow: 0 15px 25px #001aff;
+    transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator
+{
+    background: #6f00ff;
+    box-shadow: 0 15px 25px #6f00ff;
+    transform: translateX(calc(70px * 4));
+}
+
+
+
+.conteiner
+{
+    position: relative;
+    display: flex;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,transparent,#0004);
+}
+.conteiner .box
+{
+    position: relative;
+    width: 320px;
+    height: 400px;
+    margin: 0 20px;
+    border-radius: 20px;
+    background: linear-gradient(45deg,#2da2ff 25%,rgb(0, 0, 0) 25%,rgb(0, 0, 0) 50%,#2da2ff 50%,#2da2ff 75%,rgb(0, 0, 0) 75%,rgb(0, 0, 0) 100%);
+    background-size: 40px 40px;
+     filter: grayscale(1); 
+    animation: animateBg 0.5s linear infinite;
+    animation-play-state: paused;
+    transition: filter 1s;
+    display: flex;
+    justify-content: center;
+}
+.conteiner .box:nth-child(2)
+{
+    background: linear-gradient(135deg,#9700ee 25%,rgb(0, 0, 0) 25%,rgb(0, 0, 0) 50%,#9700ee 50%,#9700ee 75%,rgb(0, 0, 0) 75%,rgb(0, 0, 0) 100%); 
+    background-size: 40px 40px;
+}
+.conteiner .box:hover
+{
+    animation-play-state: running; 
+    filter: grayscale(0);
+}
+@keyframes animateBg
+{
+    0%
+    {
+        background-position: 0;
+    }
+    100%
+    {
+        background-position: 40px;
+    }
+}
+.conteiner .box img
+{
+    position: absolute;
+    bottom: 0;
+    height: 90%;
+    transition: height 0.5s;
+}
+.conteiner .box:hover img
+{
+    height: 480px;
+}
+
+
+
+
+.preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #e0e0e0;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+  }
+  
+  .preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+  
+  .preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #337ab7;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+  }
+  
+  .preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+  }
+  
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes preloader-bounce {
+  
+    0%,
+    100% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  .loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+  }
+  
+  .loaded .preloader {
+    display: none;
+  }

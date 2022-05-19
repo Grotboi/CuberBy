@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Ubuntu, sans-serif, Arial;
+}
+body
+{
+display: flex;
+justify-content: center;
+align-items:flex-end;
+min-height: 100vh;
+background-image: url(../img/f3b0d21465164e0e_1920xH.jpg);
+}
+h2
+{
+    position: absolute;
+    font-size: 6em;
+    color: #082342;
+    text-transform: uppercase;
+    width: 100%;
+    height: 70%;
+    text-align: center;
+    -webkit-box-reflect: below -42px linear-gradient(transparent,#0004);
+}
+
+h2 span
+{
+  animation: animate 5s linear infinite;  
+}
+h2 span:nth-child(even)
+{
+    animation-delay: 0.4s;
+}
+@keyframes animate
+{
+    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%
+    {
+        color: #0e3742;
+        text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%
+    {
+        color: rgb(208, 255, 0);
+        text-shadow: 0 0 10px rgba#03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4,
+        0 0 400px #03bcf4;
+    }
+}
+.navigation
+{
+    position: relative;
+    width: 350px;
+    height: 70px
+}
+.navigation ul
+{
+    display: flex;
+}
+.navigation ul li
+{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul li a
+{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+color: #fff;
+text-align:center;
+}
+.navigation ul li a .icon
+{
+    position:relative;
+    line-height: 75px;
+    transition: 0.5s;
+    font-size: 30px;
+}
+.navigation ul li.active a .icon
+{
+font-size: 20px;
+transform: translateY(-6px);
+}
+.navigation ul li a .text
+{
+    position: absolute;
+    font-size: 12px;
+    color: #fff;
+    bottom: 20px;
+    font-weight: 400;
+    transition: 0.25s;
+    text-transform: uppercase;
+    transform: scale(0);
+}
+.navigation ul li.active a .text
+{
+    transform: scale(1);
+}
+.indicator
+{
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: 30px;
+    background: rgb(255, 5, 5);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.navigation ul li:nth-child(1).active ~ .indicator
+{
+    background: #f53b57;
+    box-shadow: 0 15px 25px #f53b57;
+    transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator
+{
+    background: #ffee02;
+    box-shadow: 0 15px 25px #fffb00;
+    transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator
+{
+    background: #00edf5;
+    box-shadow: 0 15px 25px #00edf5;
+    transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator
+{
+    background: #001aff;
+    box-shadow: 0 15px 25px #001aff;
+    transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator
+{
+    background: #6f00ff;
+    box-shadow: 0 15px 25px #6f00ff;
+    transform: translateX(calc(70px * 4));
+}
+
+
+
+.preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #e0e0e0;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+  }
+  
+  .preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+  
+  .preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #337ab7;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+  }
+  
+  .preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+  }
+  
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes preloader-bounce {
+  
+    0%,
+    100% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  .loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+  }
+  
+  .loaded .preloader {
+    display: none;
+  }
